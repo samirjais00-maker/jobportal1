@@ -1,0 +1,90 @@
+﻿@model JobPortal.Models.VendorViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Vendor</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="@Url.Action("Index", "Vendor")">Vendor</a></li>
+                            <li class="active">Create</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content">
+    <div class="animated fadeIn">
+
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Create Vendor</strong>
+                    </div>
+                    <div class="card-body">
+                        <!-- Credit Card -->
+                        <div id="pay-invoice">
+                            <div class="card-body">
+                                @* <form action="#" method="post" novalidate="novalidate"> *@
+                                <form asp-action="Create" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label asp-for="VendorName" class="control-label mb-1"></label>
+                                        <input asp-for="VendorName" class="form-control" />
+                                        <span asp-validation-for="VendorName" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group has-success">
+                                        <label asp-for="VendorAddress" class="control-label mb-1"></label>
+                                        <input asp-for="VendorAddress" class="form-control" />
+                                        <span asp-validation-for="VendorAddress" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="VendorContact" class="control-label mb-1"></label>
+                                        <input asp-for="VendorContact" class="form-control" />
+                                        <span asp-validation-for="VendorContact" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="VendorEmail" class="control-label mb-1"></label>
+                                        <input asp-for="VendorEmail" class="form-control" />
+                                        <span asp-validation-for="VendorEmail" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="VendorLocation" class="control-label mb-1"></label>
+                                        <input asp-for="VendorLocation" class="form-control" />
+                                        <span asp-validation-for="VendorLocation" class="text-danger"></span>
+                                    </div>
+
+                                    <div>
+                                        <input type="submit" value="Create" class="btn btn-lg btn-info btn-block" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

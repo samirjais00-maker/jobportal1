@@ -1,4 +1,4 @@
-﻿@model JobPortal.Models.CategoryViewModel
+﻿@model JobPortal.Models.VendorViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -49,25 +49,47 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.CategoryName)
+                                        @Html.DisplayNameFor(model => model.VendorName)
                                     </th>
-                                    
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.VendorAddress)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.VendorContact)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.VendorEmail)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.VendorLocation)
+                                    </th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.CategoryList)
+                                @foreach (var item in Model.VendorList)
                                 {
                                     <tr>
 
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.CategoryName)
+                                            @Html.DisplayFor(modelItem => item.VendorName)
                                         </td>
-                                       
                                         <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-                                            @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                                            @Html.DisplayFor(modelItem => item.VendorAddress)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.VendorContact)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.VendorEmail)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.VendorLocation)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.VendorId }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.VendorId }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.VendorId })
                                         </td>
                                     </tr>
                                 }
@@ -87,4 +109,6 @@
     $('#bootstrap-data-table').DataTable();
     } );
 </script>
+
+
 
